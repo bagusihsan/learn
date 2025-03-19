@@ -80,7 +80,7 @@ jobs:
           # Mendapatkan hostname
           $hostname = hostname
           # Mendapatkan IP address ZeroTier
-          $ztIPAddress = Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -eq "ZeroTier One" } | Select-Object -ExpandProperty IPAddress
+          $ztIPAddress = Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -eq "ZeroTier One [${{ secrets.ZEROTIER_NETWORK_ID }}]" } | Select-Object -ExpandProperty IPAddress
           
           Write-Host "Hostname: $hostname"
           Write-Host "ZeroTier IP Address: $ztIPAddress"
